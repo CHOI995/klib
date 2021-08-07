@@ -1,0 +1,250 @@
+@charset "UTF-8";
+body{
+	margin: 0px;
+	padding: 0px;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+/* 이미지 슬라이드 */
+.container{
+	width: 100%;
+	height: 300px;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.box{
+	width: 180px;
+	height: 250px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 2px 10px 12px rgba(0,0,0,0.5);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	margin: 20px 10px;
+}
+.model{
+	height: 100%;
+	width: 100%;
+}
+.box:hover{
+	background: white;
+	transform-style: preserve-3d;
+	transform: scale(1.02);
+	transition: all ease 0.3s;
+}
+
+#bookImg{ 
+	width: 180px;
+	height: 250px;
+}
+
+
+
+
+.leftArea{ float: left; width: 60%; text-align: center;}
+.rightArea{ float: right; width: 40%; text-align: center;}
+
+#searchForm{ width: 100%; margin:0; }
+.searchArea{
+	display: flex; justify-content: center;
+	margin: 25px 40px; padding: 20px;
+	background:rgb(236, 223, 207);
+}
+
+.searchArea input{ font-size: 15px; width: 50%; height: 30px;}
+.searchArea select{ font-size: 15px; width: 20%; height: 30px; }
+
+#searchBtn{
+	background: rgb(212, 129, 91); border: none; margin-left: 5px;
+	color: white; font-weight: 700; padding: 6px 25px; border-radius: 3px;
+}
+
+.noticeArea, .groupArea{
+	display: flex; justify-content: center;
+	flex-direction: column;
+	margin: 40px 40px 25px 40px;
+}
+
+.bookArea{
+	display: flex; justify-content: center;
+	flex-direction: column;
+	margin: 55px 40px 25px 40px;
+}
+
+#noticeTitle, #bookTitle, #groupTitle{ 
+	width: 100%; border-bottom: 1px solid lightgray;
+	margin-bottom: 20px;
+}
+
+#noticeTitle span, #bookTitle span, #groupTitle span{ float: left; font-weight: 700;}
+#noticeTitle button, #bookTitle button, #groupTitle button{
+	float: right; border: none; background: none;
+	padding: 5px; cursor: pointer;
+}
+
+#noticeTable, #groupTable{ width: 100%;}
+
+#noticeTable table, #groupTable table{
+	width: 100%;
+	table-layout:fixed;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	border-left: none;
+	border-right: none;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+
+#noticeTable td, #groupTable td{
+	border: 1px solid lightgray;
+	border-left: none;
+	border-right: none;
+	border-collapse: collapse;
+	padding: 5px 0px; font-size: 13px;
+	overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+#bookList{ 
+	display: table; table-layout: fixed; 
+	width: 100%;
+}
+
+.bookListIMG{ display: table-cell; text-align: center;}
+
+.bookListIMG img{ 
+	width: 70%; height: auto; border: none; 
+	display: inline-block; 
+}
+
+.bookListIMG p{ font-size: 13px; }
+
+
+.Mainbutton{ 
+	display: flex; justify-content: center;
+	text-align: center; margin-top: 25px; width: 100%; 
+}
+
+.Mainbutton button{ 
+	height: 80px; padding: 0px 44px; border: none;
+	font-size: 15px; font-weight: 700; border-radius: 5px;
+}
+
+#button1{background:rgb(143, 220, 204);}
+#button2{background:rgb(159, 203, 232);}
+#button3{background:rgb(197, 158, 214);}
+#button1:hover{background:rgb(0, 220, 204);}
+#button2:hover{background:rgb(0, 203, 232);}
+#button3:hover{background:rgb(197, 70, 214);}
+
+.buttonViewArea{
+	display: inline-block; text-align: center;
+	margin-top: 40px; width: 85%; height: 190px;
+	background: rgb(236, 223, 207);
+}
+
+	#seatView{ 
+		display: flex;
+		padding: 5px;
+		justify-content: center;
+	}
+	
+	#seatView1, #seatView2{ 
+		width: 100%;
+		text-align: center;
+		border-spacing: 5px 20px;
+	}
+	
+	#seatView1>div{
+		display: flex;
+		border: 1px solid #5e5e5e;
+		float:left;
+		width: 10%;
+		padding: 6px 6%;
+		margin: 1px 0px 1px 1px;
+		cursor: pointer;
+		font-size: 5px;
+		font-weight: 600;
+		justify-content: center;
+	}
+	
+	#seatView2>div{
+		display: flex;
+		border: 1px solid #5e5e5e;
+		float:right;
+		width: 10%;
+		padding: 6px 6%;
+		margin: 1px 0px 1px 1px;
+		cursor: pointer;
+		font-size: 5px;
+		font-weight: 600;
+		justify-content: center;
+	}
+	
+	#seatView1>div:hover, #seatView2>div:hover{ background: rgba(212, 129, 91, 0.5); color: white;}
+	
+	#seatView1{margin-right: 1px;}
+	#seatView2{margin-left: 1px;}
+	
+	.full{ background: rgb(212, 129, 91); color: white;}
+	.empty{ background: none; }
+	
+	#cultureView, #bkView{ 
+		display: flex; width: 100%; justify-content: center; align-items: center;
+	}
+	
+	#cultureArea, #bkArea{
+		border: 1px solid #5e5e5e; border-left: none; border-right: none;
+		margin-top: 20px; border-collapse: collapse;
+	}
+	
+	#cultureArea td{
+		border: 1px solid #5e5e5e; border-left: none; border-right: none;
+		text-align: center; font-size: 8px; padding: 5px 15px;
+		overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+	}
+	
+	#cultureArea th{
+		border: none; background:rgba(212, 129, 91, 0.8); color: white;
+		border-left: none; border-right: none;
+		text-align: center; font-size: 10px;
+		padding: 5px 15px;
+	}
+	
+	#bkArea th{
+		border: none; background:rgba(212, 129, 91, 0.8); color: white;
+		border-left: none; border-right: none;
+		text-align: center; font-size: 10px;
+		padding: 5px 15px;
+	}
+	
+	#bkArea td{
+		border: 1px solid #5e5e5e; border-left: none; border-right: none;
+		text-align: center; font-size: 8px; padding: 5px 15px; 
+		overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+	}
+	
+	#noticeTableArea th{
+		background:rgba(224, 224, 224, 0.5); font-weight: 700; font-size: 13px;
+		padding: 3px 0px;
+	}
+	
+	#noticeTableArea td{
+		padding: 3px 0px; text-overflow: ellipsis;
+	}
+	
+@media screen and (max-width: 1035px){
+	.leftArea{ width: 100%; }
+	.rightArea{ width: 100%; }
+	#cultureArea th, #bkArea th{ padding: 5px 0px; }
+}

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="memberMapper">
+ 
+ 	<select id="login" resultMap="memberResultSet">
+ 		select *
+ 		from users
+ 		where user_id=#{id} and u_status='Y' 		
+ 	</select>
+ 	
+ 	<select id="mlistcheck" resultMap="memberResultSet">
+ 		select *
+ 		from users
+ 		where user_id=#{id} and u_status='Y' 	
+ 	</select>
+ 	
+ 	
+ 	<resultMap type="com.kh.klib.member.model.vo.Member" id="memberResultSet">
+ 		<id column="USER_NO" property="no"/>
+ 		<result column="USER_ID" property="id"/> 		
+ 		<result column="USER_PWD" property="pwd"/>
+ 		<result column="USER_NAME" property="name"/>
+ 		<result column="NICKNAME" property="nickname"/>
+ 		<result column="BIRTHDAY" property="birthday"/>
+ 		<result column="GENDER" property="gender"/>		
+ 		<result column="PHONE" property="phone"/>
+ 		<result column="EMAIL" property="email"/> 		
+ 		<result column="ADDRESS" property="address"/> 		
+ 		<result column="U_STATUS" property="uStatus"/>
+ 		<result column="ADMIN_YN" property="admin"/>
+ 	</resultMap>
+ 	
+ 	
+ 	<insert id="insertMember">
+ 		insert into users
+ 		values(seq_uno.nextval,#{id}, #{pwd}, #{name}, #{nickname},#{birthday}, #{gender}, #{phone},#{email},
+ 			#{address}, default,default)
+ 	</insert>
+ 	
+ 	<select id="dupId" resultType="_int">
+		SELECT count(*)
+		from users
+		where user_id = #{id}
+	</select>
+	<update id="deleteMember">
+		UPDATE USERS
+		SET u_status = 'N'
+		where user_id = #{id}
+	</update>
+	
+	<select id="dupNickname" resultType="_int">
+		SELECT count(*)
+		from users
+		where nickname = #{nickname}
+	</select>
+	
+	<update id="updateMember">
+		UPDATE USERS
+		SET USER_PWD = #{pwd}, USER_NAME = #{name}, NICKNAME=#{nickname},BIRTHDAY=#{birthday},GENDER = #{gender},PHONE=#{phone} ,EMAIL = #{email}, ADDRESS=#{address}
+		WHERE USER_ID = #{id}
+	</update>
+	
+	<update id="updatePwd">
+		UPDATE USERS
+		SET USER_PWD = #{pwd}
+		WHERE USER_ID = #{id}
+	</update>
+	
+	<select id="selectrList" resultMap="roomSignResultSet">
+		select *
+		from room_sign
+		where USER_NO = #{no} and out_Time is null
+		order by rs_no desc
+	</select>
+	
+	<resultMap type="RoomSign" id="roomSignResultSet">
+		<id column="RS_NO" property="rsNo"/>
+		<result column="IN_TIME" property="inTime"/>
+		<result column="OUT_TIME" property="outTime"/>
+		<result column="NICKNAME" property="nickName"/>
+		<result column="ROOM_NO" property="rNo"/>
+		<result column="USER_NO" property="uNo"/>
+	</resultMap>
+	
+	
+	<select id="selectbList" resultMap="boardResultSet">
+		select *
+		from board
+		where BOARD_WRITER = #{name} and b_status = 'Y'
+		order by board_no desc
+	</select>
+	
+		<resultMap type="Board" id="boardResultSet">
+		<id column="BOARD_NO" property="bNo" />
+		<result column="BOARD_TITLE" property="bTitle" />
+		<result column="BOARD_CONTENT" property="bContent" />
+		<result column="BOARD_WRITER" property="bWriter" />
+		<result column="BOARD_DATE" property="bDate" />
+		<result column="BOARD_COUNT" property="bCount" />
+		<result column="B_STATUS" property="bStatus" />
+	</resultMap>
+	
+	
+	<select id="selectgsList" resultMap="groupSignResultSet">
+		select *
+		from group_sign
+		where user_no = #{no}
+		order by group_no desc
+	</select>
+	<select id="selectgList" resultMap="groupResultSet">
+		select *
+		from bkgroup
+	</select>
+	
+	<resultMap type="BookGroup" id="groupResultSet">
+		<id column="GROUP_NO" property="gNo" />
+		<result column="GROUP_NAME" property="gName" />
+		<result column="GROUP_INTRO" property="gIntro" />
+		<result column="GROUP_TOTAL" property="gTotal" />
+		<result column="GROUP_CONTENT" property="gContent" />
+		<result column="GB_TITLE" property="gbTitle" />
+		<result column="GB_CONTENT" property="gbContent" />
+		<result column="GROUP_DATE" property="gDate" />
+		<result column="GROUP_PLACE" property="gPlace" />
+		<result column="G_DEADLINE" property="gDeadline" />
+		<result column="G_STATUS" property="gStatus" />
+		<result column="GROUP_WRITER" property="gWriter" />
+	</resultMap>
+		
+	<resultMap type="com.kh.klib.bkgroup.model.vo.GroupSign" id="groupSignResultSet">
+		<id column="GROUP_NO" property="gNo" />
+		<id column="USER_NO" property="uNo" />
+		<result column="GS_STATUS" property="gsStatus" />
+		<result column="GS_APPROVAL" property="gsApproval" />
+		<result column="GS_DATE" property="gsDate" />
+	</resultMap>
+	
+	
+	<select id="selectcsList" resultMap="cultureSignResultSet">
+		select *
+		from culture_sign
+		where user_no =#{no}
+	</select>
+	<select id="selectcList" resultMap="cultureResultSet">
+		select *
+		from culture
+	</select>
+	
+	<resultMap type="CultureSign" id="cultureSignResultSet">
+		<id column="USER_NO" property="uNo"/>
+		<id column="CULTURE_NO" property="cNo"/>
+		<result column="CS_STATUS" property="csStatus"/>
+		<result column="CS_DATE" property="csDate"/>
+		<result column="CS_APPROVAL" property="csApproval"/>
+	</resultMap>
+	
+		<resultMap type="Culture" id="cultureResultSet">
+		<id column="CULTURE_NO" property="cNo"/>
+		<result column="CULTURE_TITLE" property="cTitle"/>
+		<result column="CULTURE_CONTENT" property="cContent"/>
+		<result column="CULTURE_TOTAL" property="cTotal"/>
+		<result column="CULTURE_START_DATE" property="cStartDate"/>
+		<result column="CULTURE_END_DATE" property="cEndDate"/>
+		<result column="LECTURE_DATE" property="lDate"/>
+		<result column="LECTURE_TIME" property="lTime"/>
+		<result column="CULTURE_PLACE" property="cPlace"/>
+		<result column="CULTURE_INSTRUCTOR" property="cInstructor"/>
+		<result column="CULTURE_TARGET" property="cTarget"/>
+		<result column="C_DEADLINE" property="cDeadLine"/>
+		<result column="C_STATUS" property="cStatus"/>
+		<result column="USER_NO" property="uNo"/>
+	</resultMap>
+	
+	<select id="findId" parameterType="String" resultType="String">
+		select user_id from users where email = #{email} and user_name = #{name} and phone = #{phone}
+	</select>
+</mapper>

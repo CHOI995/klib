@@ -1,0 +1,123 @@
+@charset "UTF-8";
+.mainTitle{
+		font-weight: 900;
+		
+		font-size: 30px;
+		margin: 25px 60px 0px 60px;
+		padding: 0px 0px 13px 0px;
+	}
+#myinfo {
+    display: flex;
+    margin: 25px 70px 30px 60px;
+    background: #F9F9F9;
+    text-align: center;
+    
+}
+#titleImg2{
+	width: 25px; height: auto; vertical-align:middle;
+		padding-bottom: 5px;
+		margin-right: 10px;
+
+}
+td{	
+		border: none;
+		border-left: none;
+		border-right: none;
+		border-collapse: collapse;
+		padding: 10px 35px;
+		width: 30px;
+		text-align:center;
+	}
+#roominfo {
+   
+    margin: 25px 60px 0px 54px;
+    background: #fff;
+    text-align: center;
+    
+    width : 430px;
+    height : 200px;
+    display:inline-block;
+   
+}
+#boardinfo {
+    margin: 25px 60px 0px 60px;
+    background: #fff;
+    text-align: center;
+    
+    width : 430px;
+    height : 200px;
+    display: inline-block;
+}
+#cultureinfo {    
+    margin: 55px 60px 40px 66px;
+    background: #fff;
+    text-align: center;
+    
+    width : 430px;
+    height : 200px;
+    display: inline-block;
+    
+}
+#bookinfo {    
+    margin: 55px 60px 40px 60px;
+    background: #fff;
+    text-align: center;
+    
+    width : 430px;
+    height : 200px;
+    display: inline-block;
+    
+}
+.userinfot{
+	text-align: left;
+	margin-right:20px;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+.main {
+    float: right;
+    width: 75%;
+    text-align: center;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+#mpTable {
+    border-top: 2px solid #F6F6F6;
+    border-bottom: 2px solid #F6F6F6;
+    border-left: none;
+    border-right: none;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 11px;
+    margin-bottom: 75px;
+}
+user agent stylesheet
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+.searchTable{
+	font-size: 11px;
+}
+.main {
+    float: right;
+    width: 75%;
+    text-align: center;
+}
+#infoname{
+	font-size:14px;
+	font-weight: bold;
+	width: 30px;
+	
+	text-align: left;
+}
+#infop{
+	font-size:13px;
+	font-weight: bold;
+}

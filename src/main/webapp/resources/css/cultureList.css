@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+	.left{ float: left; width: 25%; }
+	
+	.sideTitle{
+		background: rgb(212, 129, 91);
+		color: white;
+		align-items: center;
+		margin: 30px 30px 15px 30px;
+		padding: 30px 30px;
+	}
+	
+	.sideButton{
+		background: lightgray;
+		color: black;
+		text-align: center;
+		margin: 15px 30px 15px 30px;
+		padding: 10px 25px;
+	}
+	
+	.main{ float: right; width: 75%; text-align: center; }
+	
+	.sideButton{
+		text-align: left;
+		padding-left : 30px;
+		cursor: pointer;
+	}
+	
+	.sideButton a{ color: black; }
+
+	.sideButton img{
+		width: auto; height: 30px; vertical-align:middle;
+		padding-bottom: 7px;
+		margin-right: 5px;
+	}
+	
+	.sideButton a{
+		display:block;
+		color: black;
+		padding: 17px 20px;
+	}
+	
+	.sideButton:hover{
+		background: gray;
+	}
+	
+	.mainTitle{
+		font-weight: 900;
+		border-bottom: 2px solid lightgray;
+		font-size: 30px;
+		margin: 25px 60px 0px 60px;
+		padding: 0px 0px 13px 0px;
+	}
+	
+	.mainTitle p{ text-align: left; width: 70%; margin: 0;}
+
+	#titleImg1{ 
+		width: auto; height: 30px; vertical-align:middle;
+		padding-bottom: 7px;
+		margin-right: 10px;
+	}
+	
+	#searchDiv{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 25px 60px 0px 60px;
+		background: lightgray;
+		text-align: center;
+	}
+	
+	#searchTable{ margin: 10px; width: 100%; }
+	
+	#searchTable td{
+		font-size: 15px; font-weight: 600;
+		padding: 10px 5px;
+	}
+	
+	#searchTable td input{
+		font-size: 15px; width: 100%; height: 27px;
+	}
+	
+	#searchTable td select{
+		font-size: 15px; width: 100%; height: 27px;
+	}
+	
+	#searchBtn{
+		display: flex;
+		justify-content: center;
+		background: rgb(94, 94, 94); color: white;
+		border: none;
+		font-weight: 700;
+		padding: 5px 0px;
+		border-radius: 5px;
+		height: 30px;
+		width: 120px;
+		margin-right: 15px;
+	}
+	
+	#searchBtn:hover{
+		background: rgba(94, 94, 94, 0.5); cursor: pointer;
+	}
+	
+	#emptyList{
+		display: inline-block; justify-content: center;
+		width: 100%; margin-bottom: 50px;
+	}
+	
+	.programList{ 
+		display: block; padding: 0;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		margin: 25px 60px 0px 60px; flex-direction: row;
+	}
+
+	.thumbList{
+		display: inline-block;
+		width: 33%; float: left; padding-top: 1%; padding-bottom: 1%;
+	}
+	
+	
+	.cultureListIMG img{ 
+		width: 165px; height: 250px; border: none; 
+		display: inline-block; margin: 10px;
+		align: center;
+	}
+	
+	.thumbList:hover{ 
+		background: rgba(94, 94, 94, 0.3);
+		cursor: pointer;
+	} 
+	
+	.thumbTitle{ 
+		font-size: 15px; font-weight: 600;
+		text-align: left; margin: 0% 10%;
+		overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+	}
+	
+	.thumbInfo{ 
+		font-size: 10px; text-align: left; font-weight: 700;
+		margin-left: 10%; margin-right: 10%;
+	}
+	
+	.thumbInfo span {color: rgb(211, 0, 137);}
+	
+	.pagingArea { 
+		display: inline-block; width: 100%;
+		font-size: 13px; margin-top: 20px; margin-bottom: 20px;
+	}
+	
+	.pageBtn{ 
+		display: inline-block;
+		background: rgb(244, 244, 244); width: 30px; line-height: 30px;	
+		text-align: center; border-radius: 2px; 
+	}
+	
+	.pageBtn:hover{ 
+		background: lightgray;
+	}
+	
+	.currentpageBtn{ 
+		display: inline-block;
+		background: rgb(212, 129, 91); color: white; text-align: center; 
+		width: 30px; line-height: 30px;  border-radius: 2px;
+	}
+	
+	em{
+      position: absolute; z-index: 2;
+      font-style: normal; width: 165px; height: 250px;
+      background: rgba(0, 0, 0, .4); margin: 10px;
+      color: white; text-align: center; line-height: 240px;
+   }
+	
+@media screen and (max-width: 1035px){
+}
+
+@media screen and (max-width: 720px){
+	#searchDiv{
+		flex-direction: column;
+	}
+	
+	#searchTable td{
+		font-size: 15px; font-weight: 600;
+		padding: 10px 15px;
+	}
+	
+	
+	#searchBtn{ margin-left: 15px; margin-bottom: 15px; width: 90%; }
+}
